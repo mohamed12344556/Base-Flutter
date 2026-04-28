@@ -20,7 +20,7 @@
 6. If a feature folder is listed under "Delete", remove the folder and every reference to it (imports, DI registrations, routes, exports, BlocProviders).
 7. Do NOT touch `assets/` binary files. You may edit text files inside `assets/lang/`.
 8. All replacements are **whole-token** unless stated otherwise (don't replace substrings inside unrelated identifiers).
-
+ 
 ---
 
 ## Task 1 — Rename package `eol_app` → `base_flutter`
