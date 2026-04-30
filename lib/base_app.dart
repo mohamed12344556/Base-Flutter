@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/core.dart';
 
@@ -37,10 +38,15 @@ class _BaseAppState extends State<BaseApp> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: _getInitialRoute(),
-      onGenerateRoute: widget.appRouter.generateRoute,
+    return ScreenUtilInit(
+      designSize: const Size(390, 844),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (_, child) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        initialRoute: _getInitialRoute(),
+        onGenerateRoute: widget.appRouter.generateRoute,
+      ),
     );
   }
 

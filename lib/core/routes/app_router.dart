@@ -7,7 +7,8 @@ import '../../features/auth/ui/views/login_view.dart';
 import '../../features/auth/ui/views/otp_authenticate_view.dart';
 import '../../features/auth/ui/views/reset_password_view.dart';
 import '../../features/auth/ui/views/sign_up_view.dart';
-import '../../features/posts_example/posts_example.dart';
+import '../../features/posts/ui/logic/posts_cubit.dart';
+import '../../features/posts/ui/views/posts_view.dart';
 import '../core.dart';
 
 class Routers {
@@ -22,7 +23,10 @@ class Routers {
 
       case AppRoutes.onboardingView:
         return MaterialPageRoute(
-          builder: (_) => const PostsExampleView(),
+          builder: (_) => BlocProvider(
+            create: (_) => sl<PostsCubit>()..fetchPosts(),
+            child: const PostsView(),
+          ),
         );
 
       case AppRoutes.loginView:
@@ -64,6 +68,14 @@ class Routers {
           builder: (_) => BlocProvider.value(
             value: sl<AuthCubit>(),
             child: const ResetPasswordView(),
+          ),
+        );
+
+      case AppRoutes.postsView:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (_) => sl<PostsCubit>()..fetchPosts(),
+            child: const PostsView(),
           ),
         );
 

@@ -11,4 +11,5 @@ class AppRoutes {
   static const String profileSettingsView = '/profile-settings';
   static const String notificationsView = '/notifications';
   static const String settingsView = '/settings';
+  static const String postsView = '/posts';
 }
