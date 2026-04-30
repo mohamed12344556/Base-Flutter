@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'base_app.dart';
 import 'core/config/environment_config.dart';
+import 'core/di/dependency_injection.dart';
 import 'core/routes/app_router.dart';
 
 Future<void> bootstrap({
@@ -12,6 +13,8 @@ Future<void> bootstrap({
   bool trackAppVersion = false,
 }) async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await setupGetIt(config: config);
 
   runApp(
     BaseApp(

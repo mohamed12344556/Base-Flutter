@@ -7,6 +7,7 @@ import '../../features/auth/ui/views/login_view.dart';
 import '../../features/auth/ui/views/otp_authenticate_view.dart';
 import '../../features/auth/ui/views/reset_password_view.dart';
 import '../../features/auth/ui/views/sign_up_view.dart';
+import '../../features/posts_example/posts_example.dart';
 import '../core.dart';
 
 class Routers {
@@ -21,7 +22,7 @@ class Routers {
 
       case AppRoutes.onboardingView:
         return MaterialPageRoute(
-          builder: (_) => const Scaffold(body: Center(child: Text('Onboarding'))),
+          builder: (_) => const PostsExampleView(),
         );
 
       case AppRoutes.loginView:
